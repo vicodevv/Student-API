@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,7 +17,7 @@ public class Student {
     private String email;
     private Gender gender;
     private Address address;
-    private List<String> courses;
+    private String department;
     private LocalDateTime createdAt;
 
     public Student(String firstName, 
@@ -25,7 +25,7 @@ public class Student {
                     String email,
                     Gender gender,
                     Address address,
-                    List<String> courses,
+                    String department,
                     LocalDateTime createdAt) {
 
             this.firstname = firstName;
@@ -33,7 +33,7 @@ public class Student {
             this.email = email;
             this.gender = gender;
             this.address = address;
-            this.courses = courses;
+            this.department = department;
             this.createdAt = createdAt;
     }
 }

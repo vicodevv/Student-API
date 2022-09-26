@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -29,7 +28,7 @@ public class DemoApplication {
 				"vomoniyi2001@gmail.com", 
 				Gender.MALE,
 				address,
-				List.of("Computer Science"), 
+				"Computer Science", 
 				LocalDateTime.now()
 			);
 		repository.insert(student);
