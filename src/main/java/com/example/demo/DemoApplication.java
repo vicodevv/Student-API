@@ -2,7 +2,6 @@ package com.example.demo;
 
 import java.time.LocalDateTime;
 
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,43 +21,42 @@ public class DemoApplication {
 			Address address = new Address(
 				"Nigeria",
 				"Lagos",
-				"SW1A 1AA"
+				"SW4B 1VS"
 			);
-			String email = "vomoniyi2001@gmail.com";
+			String email = "alhamis@gmail.com";
 			Student student = new Student(
-				"Victor", 
-				"Omoniyi",
+				"Al-Hamis",
+				"Badru",
 				email, 
 				Gender.MALE,
 				address,
 				"Computer Science", 
 				LocalDateTime.now()
 			);
-			repository.findStudentbyEmail(email)
-				.ifPresentOrElse(s ->{
-					System.out.println(s + "already exists");  
-				}, ()->{
-					System.out.println("Inserting Student" + student);
-					repository.insert(student);
-				});
+			repository.insert(student);
 		
 		};
 
 	}
-	//	Query query = new Query();
-		//	query.addCriteria(Criteria.where("email").is(email));
-			
-		//	List<Student> students = MongoTemplate.find(query, Student.class);
-		//	if (students.size() > 1){
-		//		throw new IllegalStateException("Student already exists" + email);
-		//	}
-		//	if (students.isEmpty()){
-		//		System.out.println("Inserting Student" + student);
-		//		repository.insert(student);
-		//	}
-		//	else{ 
-		//		System.out.println(student + "already exists");  
-		//	}
-		//	repository.insert(student);
-		//		repository.save(student);
+//	private void usingMongoTemplateAndQuery(StudentRepository repository, MongoTemplate mongoTemplate, String student) {
+//		
+//			Query query = new Query();
+//			query.addCriteria(Criteria.where("email").is(email));
+//			
+//			List<Student> students = MongoTemplate.find(query, Student.class);
+//			if (students.size() > 1){
+//				throw new IllegalStateException("Student already exists" + email);
+//			}
+//			if (students.isEmpty()){
+//				System.out.println("Inserting Student" + student);
+//				repository.insert(student);
+//			}
+//			else{ 
+//				System.out.println(student + "already exists");  
+//			}
+//			repository.insert(student);
+//				repository.save(student);
+//	}
+
+	
 }
