@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 import org.springframework.boot.CommandLineRunner;
@@ -35,8 +34,18 @@ public class DemoApplication {
 				"Computer Science", 
 				LocalDateTime.now()
 			);
+			repository.findStudentbyEmail(email)
+				.ifPresentOrElse(s ->{
+					System.out.println(student + "already exists");  
+				}, ()->{
+					System.out.println("Inserting Student" + student);
+					repository.insert(student);
+				});
+		
+		};
 
-		//	Query query = new Query();
+	}
+	//	Query query = new Query();
 		//	query.addCriteria(Criteria.where("email").is(email));
 			
 		//	List<Student> students = MongoTemplate.find(query, Student.class);
@@ -52,7 +61,4 @@ public class DemoApplication {
 		//	}
 		//	repository.insert(student);
 		//		repository.save(student);
-		};
-
-	}
 }
