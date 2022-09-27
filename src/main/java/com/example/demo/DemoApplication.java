@@ -36,7 +36,7 @@ public class DemoApplication {
 			);
 			repository.findStudentbyEmail(email)
 				.ifPresentOrElse(s ->{
-					System.out.println(student + "already exists");  
+					System.out.println(s + "already exists");  
 				}, ()->{
 					System.out.println("Inserting Student" + student);
 					repository.insert(student);
