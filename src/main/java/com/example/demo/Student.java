@@ -13,8 +13,8 @@ import lombok.Data;
 public class Student {
     @Id
     private String id;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     @Indexed(unique = true)
     private String email;
     private Gender gender;
@@ -22,16 +22,16 @@ public class Student {
     private String department;
     private LocalDateTime createdAt;
 
-    public Student(String firstName, 
-                    String lastName, 
+    public Student(String firstname, 
+                    String lastname, 
                     String email,
                     Gender gender,
                     Address address,
                     String department,
                     LocalDateTime createdAt) {
 
-            this.firstName = firstName;
-            this.lastName = lastName;
+            this.firstname = firstname;
+            this.lastname = lastname;
             this.email = email;
             this.gender = gender;
             this.address = address;
