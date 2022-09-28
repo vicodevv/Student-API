@@ -13,7 +13,7 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-	}
+	} 
 
 	@Bean
 	CommandLineRunner runner(StudentRepository repository, MongoTemplate mongoTemplate){
@@ -21,12 +21,12 @@ public class DemoApplication {
 			Address address = new Address(
 				"Nigeria",
 				"Lagos",
-				"SW4B 1VS"
+				"SW2K 3JF"
 			);
-			String email = "alhamis@gmail.com";
+			String email = "trevorcnweze@gmail.com";
 			Student student = new Student(
-				"Al-Hamis",
-				"Badru",
+				"Trevor",
+				"Nweze",
 				email, 
 				Gender.MALE,
 				address,
