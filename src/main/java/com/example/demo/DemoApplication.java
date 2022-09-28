@@ -1,12 +1,9 @@
 package com.example.demo;
 
-import java.time.LocalDateTime;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.mongodb.core.MongoTemplate;
+
 
 @SpringBootApplication
 public class DemoApplication {
@@ -15,29 +12,28 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	} 
 
-	@Bean
-	CommandLineRunner runner(StudentRepository repository, MongoTemplate mongoTemplate){
-		return args -> {
-			Address address = new Address(
-				"Nigeria",
-				"Lagos",
-				"SW2K 3JF"
-			);
-			String email = "trevorcnweze@gmail.com";
-			Student student = new Student(
-				"Trevor",
-				"Nweze",
-				email, 
-				Gender.MALE,
-				address,
-				"Computer Science", 
-				LocalDateTime.now()
-			);
-			//repository.insert(student);
-		
-		};
+//	@Bean
+//	CommandLineRunner runner(StudentRepository repository, MongoTemplate mongoTemplate){
+//		return args -> {
+//			Address address = new Address(
+//				"Nigeria",
+//				"Lagos",
+//				"SW2K 3JF"
+//			);
+//			String email = "trevorcnweze@gmail.com";
+//			Student student = new Student(
+//				"Trevor",
+//				"Nweze",
+//				email, 
+//				Gender.MALE,
+//				address,
+//				"Computer Science", 
+//				LocalDateTime.now()
+//			);			//repository.insert(student);
 
-	}
+//		};
+//
+//	}
 //	private void usingMongoTemplateAndQuery(StudentRepository repository, MongoTemplate mongoTemplate, String student) {
 //		
 //			Query query = new Query();
