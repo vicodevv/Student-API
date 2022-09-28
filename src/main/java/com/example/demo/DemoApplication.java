@@ -33,7 +33,7 @@ public class DemoApplication {
 				"Computer Science", 
 				LocalDateTime.now()
 			);
-			repository.insert(student);
+			//repository.insert(student);
 		
 		};
 

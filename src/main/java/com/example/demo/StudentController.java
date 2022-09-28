@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/students")
+@RequestMapping("api/v1/students")
 public class StudentController {
 
     private final StudentService studentService;
